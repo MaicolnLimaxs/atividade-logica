@@ -1,0 +1,43 @@
+# matriz
+
+# Criando a matriz 3x3 
+matriz = [[0, 0, 0],
+          [0, 0, 0],
+          [0, 0, 0]]
+
+# Variáveis para os cálculos1
+soma_pares = 0
+soma_terceira_coluna = 0
+maior_segunda_linha = 0
+
+# Leitura dos valores pelo teclado
+for linha in range(3):
+    for coluna in range(3):
+        valor = int(input(f"Digite um valor para [{linha}, {coluna}]: "))
+        matriz[linha][coluna] = valor
+
+# Exibindo a matriz formatada
+print("\nMatriz digitada:")
+for linha in range(3):
+    for coluna in range(3):
+        print(f"[{matriz[linha][coluna]:^5}]", end=" ")
+    print()  # quebra de linha
+
+# A) Soma dos valores pares
+for linha in range(3):
+    for coluna in range(3):
+        if matriz[linha][coluna] % 2 == 0:
+            soma_pares += matriz[linha][coluna]
+
+# B) Soma dos valores da terceira coluna
+for linha in range(3):
+    soma_terceira_coluna += matriz[linha][2]
+
+# C) Maior valor da segunda linha
+maior_segunda_linha = max(matriz[1])
+
+# Exibindo os resultados
+print("\n--- Resultados ---")
+print(f"A) Soma dos valores pares: {soma_pares}")
+print(f"B) Soma dos valores da terceira coluna: {soma_terceira_coluna}")
+print(f"C) Maior valor da segunda linha: {maior_segunda_linha}")
